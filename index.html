@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeourbeFiltro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Formulario de Filtro</h1>
+    <form id="filtroForm" onsubmit="return showThankYouMessage()">
+        <!-- Tabla para organizar los campos del formulario -->
+        <table>
+            <tr>
+                <td><label for="nombre">Nombre:</label></td>
+                <td><input type="text" id="nombre" name="nombre" required></td>
+            </tr>
+            <tr>
+                <td><label for="apellido">Apellido:</label></td>
+                <td><input type="text" id="apellido" name="apellido" required></td>
+            </tr>
+            <tr>
+                <td><label for="presupuesto">Presupuesto:</label></td>
+                <td><input type="number" id="presupuesto" name="presupuesto" required></td>
+            </tr>
+            <tr>
+                <td><label for="busca">Lo que busca:</label></td>
+                <td><input type="text" id="busca" name="busca" required></td>
+            </tr>
+            <tr>
+                <td><label for="telefono">Teléfono:</label></td>
+                <td><input type="tel" id="telefono" name="telefono" required></td>
+            </tr>
+            <tr>
+                <td><label for="correo">Correo electrónico:</label></td>
+                <td><input type="email" id="correo" name="correo" required></td>
+            </tr>
+            <tr>
+                <td><label for="financiacion">¿Necesita financiación?</label></td>
+                <td><select id="financiacion" name="financiacion" required>
+                    <option value="sí">Sí</option>
+                    <option value="no">No</option>
+                </select></td>
+            </tr>
+        </table>
+
+        <!-- Botón para enviar el formulario -->
+        <button type="submit">Enviar</button>
+    </form>
+
+    <!-- Mensaje de gracias (inicialmente oculto) -->
+    <div class="thank-you-message" id="thankYouMessage">
+        ¡Gracias por enviar tu solicitud!
+    </div>
+</div>
+
+<script>
+    // Función para mostrar el mensaje de gracias al enviar el formulario
+    function showThankYouMessage() {
+        event.preventDefault(); // Prevenir el envío del formulario (sin recargar la página)
+        document.getElementById('thankYouMessage').style.display = 'block'; // Mostrar el mensaje de gracias
+        document.getElementById('filtroForm').reset(); // Resetear el formulario
+    }
+</script>
+
+</body>
+</html>
